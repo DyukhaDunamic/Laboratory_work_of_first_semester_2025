@@ -10,24 +10,13 @@ public class task_2012 {
 
         int f = in.nextInt();
 
-        final int TOTAL_TALKS = 12;
+        int remaining = 12 - f;
+        int timeNeeded = remaining * 45;
 
-        final int REMAINING_TIME = 240;
-
-        final int TIME_PER_TASK = 45;
-
-        int remainingTasks = TOTAL_TALKS - f;
-
-        int requiredTime = remainingTasks * TIME_PER_TASK;
-
-        if (requiredTime <= REMAINING_TIME) {
-            System.out.println("Yes");
+        if (timeNeeded <= 300) {
+            System.out.println("YES");
         } else {
-            System.out.println("No");
+            System.out.println("NO");
         }
-
-        in.close();
-
     }
-
 }

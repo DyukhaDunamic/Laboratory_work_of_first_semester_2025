@@ -1,50 +1,27 @@
 package timus;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class task_1209 {
 
-    public static void main(String[] args) {
-
-        Scanner in = new Scanner(System.in);
-
-        int N = in.nextInt();
-        int[] results = new int[N];
-
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine().trim());
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < N; i++) {
-            long Ki = in.nextLong();
-            results[i] = getDigitAtPosition(Ki);
-        }
-
-        for (int i = 0; i < N; i++) {
-            System.out.print(results[i]);
-            if (i < N - 1) System.out.print(" ");
-        }
-
-        System.out.println();
-
-        in.close();
-    }
-
-    private static int getDigitAtPosition(long Ki) {
-        long position = 0;
-        int power = 0;
-
-        while (true) {
-            int blockLength = power + 1;
-
-            if (position + blockLength >= Ki) {
-                long offset = Ki - position - 1;
-
-                if (offset == 0) {
-                    return 1;
-                } else {
-                    return 0;
-                }
+            long K = Long.parseLong(br.readLine().trim());
+            long v = 8L * K - 7;
+            long s = (long)Math.sqrt(v);
+            if (s * s == v) {
+                sb.append('1');
+            } else {
+                sb.append('0');
             }
-
-            position += blockLength;
-            power++;
+            if (i < N - 1) sb.append(' ');
         }
+        System.out.println(sb);
     }
 }
+
