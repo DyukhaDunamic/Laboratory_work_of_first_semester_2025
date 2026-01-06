@@ -17,7 +17,7 @@ public class Example8 {
         System.out.println("Enter the day number in the month (number): ");
         int dayNumber = in.nextInt();
 
-        System.out.println("Today: " + dayOfWeak + ", " + dayNumber + ", " + month + " ");
+        System.out.println("Today: " + dayNumber + ", " + dayOfWeak + ", " + month + " ");
 
         in.close();
 
